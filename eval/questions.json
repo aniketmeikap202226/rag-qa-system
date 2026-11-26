@@ -1,0 +1,182 @@
+[
+  {
+    "question": "What does the break statement do in a loop?",
+    "keyword": "breaks out of the innermost enclosing"
+  },
+  {
+    "question": "What does the continue statement do?",
+    "keyword": "continues with the next iteration"
+  },
+  {
+    "question": "What is the pass statement used for?",
+    "keyword": "does nothing"
+  },
+  {
+    "question": "When are default argument values evaluated?",
+    "keyword": "evaluated only once"
+  },
+  {
+    "question": "What are lambda expressions used for?",
+    "keyword": "small anonymous functions"
+  },
+  {
+    "question": "What is a list comprehension?",
+    "keyword": "list comprehension consists of brackets"
+  },
+  {
+    "question": "Are tuples mutable?",
+    "keyword": "tuples are immutable"
+  },
+  {
+    "question": "What is a set in Python?",
+    "keyword": "unordered collection with no duplicate elements"
+  },
+  {
+    "question": "What does the finally clause do?",
+    "keyword": "clean-up action"
+  },
+  {
+    "question": "How do you force an exception to occur?",
+    "keyword": "allows the programmer to force a specified exception to occur"
+  },
+  {
+    "question": "What do classes provide?",
+    "keyword": "bundling data and functionality together"
+  },
+  {
+    "question": "What is name mangling?",
+    "keyword": "name mangling"
+  },
+  {
+    "question": "What are generators?",
+    "keyword": "simple and powerful tool for creating iterators"
+  },
+  {
+    "question": "What is a module?",
+    "keyword": "file containing python definitions"
+  },
+  {
+    "question": "How do I create a virtual environment?",
+    "keyword": "python -m venv tutorial-env"
+  },
+  {
+    "question": "How do I install packages with pip?",
+    "keyword": "pip install"
+  },
+  {
+    "question": "Why is floating point inexact?",
+    "keyword": "binary fractions"
+  },
+  {
+    "question": "What are formatted string literals?",
+    "keyword": "formatted string literals"
+  },
+  {
+    "question": "What is good practice when working with file objects?",
+    "keyword": "good practice to use the"
+  },
+  {
+    "question": "How do I do pattern matching on strings?",
+    "keyword": "regular expression"
+  },
+  {
+    "question": "How can I compress data?",
+    "keyword": "zlib"
+  },
+  {
+    "question": "How do I measure performance of code snippets?",
+    "keyword": "timeit"
+  },
+  {
+    "question": "What is the primary prompt in interactive mode?",
+    "keyword": "primary prompt"
+  },
+  {
+    "question": "How do comments start in Python?",
+    "keyword": "comments in python start with the hash character"
+  },
+  {
+    "question": "What does the division operator return?",
+    "keyword": "always returns a float"
+  },
+  {
+    "question": "Can Python strings be changed?",
+    "keyword": "python strings cannot be changed"
+  },
+  {
+    "question": "What does the match statement do?",
+    "keyword": "compares its value to successive patterns"
+  },
+  {
+    "question": "What is an arbitrary argument list?",
+    "keyword": "arbitrary argument list"
+  },
+  {
+    "question": "What is exception chaining?",
+    "keyword": "exception chaining"
+  },
+  {
+    "question": "What is sequence unpacking?",
+    "keyword": "sequence unpacking"
+  },
+  {
+    "question": "How do I work with dates and times?",
+    "keyword": "dates and times"
+  },
+  {
+    "question": "What does tab completion do in the interpreter?",
+    "keyword": "tab completion"
+  },
+  {
+    "question": "What is the Python Package Index?",
+    "keyword": "python package index"
+  },
+  {
+    "question": "How do I remove an item from a list by index?",
+    "keyword": "remove an item from a list given its index instead of its value"
+  },
+  {
+    "question": "How do sets support math operations?",
+    "keyword": "mathematical operations like union"
+  },
+  {
+    "question": "What is a queue?",
+    "keyword": "first-in, first-out"
+  },
+  {
+    "question": "What is the walrus operator?",
+    "keyword": ":="
+  },
+  {
+    "question": "What is the end-of-file character?",
+    "keyword": "end-of-file"
+  },
+  {
+    "question": "Which encoding do source files use by default?",
+    "keyword": "utf-8"
+  },
+  {
+    "question": "How do I send email?",
+    "keyword": "smtplib"
+  },
+  {
+    "question": "How do I find heap smallest values?",
+    "keyword": "heapq"
+  },
+  {
+    "question": "What is the weak reference module for?",
+    "keyword": "weakref"
+  },
+  {
+    "question": "What is a bisect module?",
+    "keyword": "bisect"
+  },
+  {
+    "question": "How do I check if a name is defined in a module?",
+    "keyword": "dir()"
+  },
+  {
+    "question": "How do I write output to standard error?",
+    "keyword": "stderr"
+  }
+]

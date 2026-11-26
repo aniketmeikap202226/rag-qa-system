@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+data/
+docs/*.pdf
+docs/*.txt
+docs/*.md
+.DS_Store

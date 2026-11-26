@@ -1,0 +1,9 @@
+pypdf>=4.0.0
+transformers>=4.40.0
+torch
+numpy
+streamlit>=1.35.0
+requests
+# Only needed if you use that provider:
+openai>=1.30.0
+anthropic>=0.30.0

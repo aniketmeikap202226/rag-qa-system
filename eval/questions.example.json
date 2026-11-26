@@ -1,0 +1,5 @@
+[
+  {"question": "How many paid leave days do employees get per year?", "keyword": "24 days"},
+  {"question": "What is the notice period for resignation?", "keyword": "30 days"},
+  {"question": "Who approves work-from-home requests?", "file": "handbook.pdf", "page": 12}
+]
