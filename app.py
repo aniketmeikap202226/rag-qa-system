@@ -1,10 +1,21 @@
-"""Streamlit UI.  Run:  streamlit run app.py"""
+"""Streamlit UI.  Run:  python -m streamlit run app.py"""
 import os
 
 import streamlit as st
 
-from src import config, ingest
-from src.rag import answer, retriever
+# On hosted platforms, secrets arrive via st.secrets; copy them into the environment
+# BEFORE src.config is imported (it reads settings from environment variables).
+try:
+    for _k in ("LLM_PROVIDER", "GEMINI_API_KEY", "GEMINI_MODEL", "GEMINI_FALLBACK_MODEL"):
+        if _k in st.secrets and _k not in os.environ:
+            os.environ[_k] = str(st.secrets[_k])
+except Exception:
+    pass
+
+from src import config, ingest  # noqa: E402
+from src.rag import answer, retriever  # noqa: E402
+
+MAX_QUESTIONS = int(os.getenv("MAX_QUESTIONS_PER_SESSION", "15"))  # protects the API key
 
 st.set_page_config(page_title="RAG Document Q&A", page_icon="📄")
 st.title("📄 Document Q&A (RAG)")
@@ -12,6 +23,8 @@ st.caption(f"LLM provider: {config.LLM_PROVIDER}")
 
 if "history" not in st.session_state:
     st.session_state.history = []
+if "n_questions" not in st.session_state:
+    st.session_state.n_questions = 0
 
 with st.sidebar:
     st.header("Documents")
@@ -30,9 +43,18 @@ with st.sidebar:
     if st.button("Clear chat"):
         st.session_state.history = []
 
+# First run on a fresh server: build the index from the bundled documents.
 if not os.path.exists(config.INDEX_FILE):
-    st.info("Upload documents in the sidebar and click **Build index** to start.")
-    st.stop()
+    has_docs = os.path.isdir(config.DOCS_FOLDER) and any(
+        f.lower().endswith((".pdf", ".txt", ".md")) for f in os.listdir(config.DOCS_FOLDER)
+    )
+    if has_docs:
+        with st.spinner("First start: building the search index (about a minute)..."):
+            ingest.build_index()
+            retriever.reload()
+    else:
+        st.info("Upload documents in the sidebar and click **Build index** to start.")
+        st.stop()
 
 # Replay conversation
 for turn in st.session_state.history:
@@ -43,6 +65,12 @@ for turn in st.session_state.history:
 
 question = st.chat_input("Ask something about your documents...")
 if question:
+    if st.session_state.n_questions >= MAX_QUESTIONS:
+        st.warning(f"Demo limit reached ({MAX_QUESTIONS} questions per session). "
+                   "Refresh the page to start a new session.")
+        st.stop()
+    st.session_state.n_questions += 1
+
     with st.chat_message("user"):
         st.write(question)
     with st.chat_message("assistant"):

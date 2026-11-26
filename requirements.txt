@@ -1,9 +1,7 @@
-pypdf>=4.0.0
-transformers>=4.40.0
+--extra-index-url https://download.pytorch.org/whl/cpu
 torch
+transformers>=4.40.0
 numpy
-streamlit>=1.35.0
+pypdf>=4.0.0
 requests
-# Only needed if you use that provider:
-openai>=1.30.0
-anthropic>=0.30.0
+streamlit

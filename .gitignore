@@ -5,6 +5,5 @@ venv/
 .env
 data/
 docs/*.pdf
-docs/*.txt
-docs/*.md
+*.zip
 .DS_Store
