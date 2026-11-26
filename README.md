@@ -32,7 +32,7 @@ flowchart LR
 ```
 
 ## Tech stack
-Python · PyTorch · Hugging Face Transformers · NumPy · pypdf · Streamlit · Gemini / OpenAI / Anthropic / Ollama
+Python · PyTorch · Hugging Face Transformers · NumPy · pypdf · Streamlit · Gemini 
 
 ## Quickstart
 ```bash
